@@ -1,6 +1,8 @@
 # Introduction
 This repository contains an example of implementing new functionality using Jenkins file.
 
+You'll need to install the [Pipeline Utility Steps - Plugin](https://plugins.jenkins.io/pipeline-utility-steps/). We just this to get the `readYaml` function.
+
 ``` jenkins
 @Library('pipeline-library-demo') _
 import org.nordcloud.secretScan;
