@@ -10,6 +10,8 @@ pipeline {
     parameters {
         string(name: 'searchPath', defaultValue: '/etc', description: 'Directory to scan')
         string(name: 'searchTerms', defaultValue: 'root,password', description: 'List of problem terms to search for')
+        string(name: 'environment', defaultValue: 'pre', description: 'Which environment are we using? dev, pre, prod')
+        string(name: 'repositoryName', defaultValue: 'pre-12a0c9', description: 'Repository to build')
     }
     stages {
         stage('Secret Scanner') {
@@ -24,6 +26,11 @@ pipeline {
         stage('Get CPU Statistics') {
             steps {
                 getCPU()
+            }
+        }
+        stage('Validate Repository Name') {
+            steps {
+                validateName(params.environment, params.repositoryName)
             }
         }
     }

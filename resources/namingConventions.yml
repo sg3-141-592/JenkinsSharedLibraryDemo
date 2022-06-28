@@ -1,0 +1,7 @@
+---
+ RepositoryNames:
+   - dev: '^dev-.*'
+   - pre: '^pre-.*'
+   - prod: '^prod-.*'
+ Misc:
+   - Timeout: 10
